@@ -3,6 +3,7 @@ import { resolve } from 'path'; // 引入node path模块
 import { defineConfig, loadEnv } from 'vite';
 import { createHtmlPlugin } from 'vite-plugin-html';
 import Components from 'unplugin-vue-components/vite';
+import path from 'path'
 import { VantResolver } from 'unplugin-vue-components/resolvers';
 // 因为vite中已经内联了postcss，所以并不需要额外的创建 postcss.config.js文件 
 import postcsspxtoviewport from 'postcss-px-to-viewport'
@@ -30,6 +31,13 @@ export default ({ command, mode }) => {
       },
       chunkSizeWarningLimit: 1500, // chunk 大小警告的限制（以 kbs 为单位）
     },
+    resolve: {
+      alias: {
+        '~@': path.join(__dirname, './src'),
+        '@': path.join(__dirname, './src'),
+        '~': path.join(__dirname, './src/assets'),
+      },
+    },
     server: {
       host: env.VITE_HOST,
       port: env.VITE_PORT
@@ -38,7 +46,7 @@ export default ({ command, mode }) => {
       preprocessorOptions: {
         less: {
           javascriptEnabled: true,
-          additionalData: `@import "${resolve(__dirname,'src/styles/index.less')}";`,
+          additionalData: `@import "${resolve(__dirname, 'src/styles/index.less')}";`,
         },
       },
       postcss: {
@@ -63,7 +71,9 @@ export default ({ command, mode }) => {
       // 其他地方使用配置文件（vue,ts,js等） 使用 import.meta.env
       createHtmlPlugin(),
       Components({
+        dts: true,
         resolvers: [VantResolver()],
+        types: [],
       }),
     ],
   });
