@@ -26,3 +26,9 @@ npm run build
 ```sh
 npm run lint
 ```
+
+### 请求不到，ssl证书原因
+
+```sh
+git config --global http.sslVerify false
+```
