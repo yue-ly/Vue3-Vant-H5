@@ -27,7 +27,7 @@ npm run build
 npm run lint
 ```
 
-### 请求不到，ssl证书原因
+### Unknown SSL protocol error in connection to github.com
 
 ```sh
 git config --global http.sslVerify false
