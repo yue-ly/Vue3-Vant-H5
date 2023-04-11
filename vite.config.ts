@@ -2,6 +2,11 @@ import vue from '@vitejs/plugin-vue';
 import { resolve } from 'path'; // 引入node path模块
 import { defineConfig, loadEnv } from 'vite';
 import { createHtmlPlugin } from 'vite-plugin-html';
+import Components from 'unplugin-vue-components/vite';
+import { VantResolver } from 'unplugin-vue-components/resolvers';
+// 因为vite中已经内联了postcss，所以并不需要额外的创建 postcss.config.js文件 
+import postcsspxtoviewport from 'postcss-px-to-viewport'
+
 
 export default ({ command, mode }) => {
   // 获取环境变量
@@ -36,6 +41,20 @@ export default ({ command, mode }) => {
           additionalData: `@import "${resolve(__dirname,'src/styles/index.less')}";`,
         },
       },
+      postcss: {
+        plugins: [
+          postcsspxtoviewport({
+            unitToConvert: 'px', // 要转化的单位
+            viewportWidth: 375, // UI设计稿的宽度
+            unitPrecision: 6, // 转换后的精度，即小数点位数
+            minPixelValue: 1, // 默认值1，小于或等于1px则不进行转换
+            mediaQuery: true, // 是否在媒体查询的css代码中也进行转换，默认false
+            replace: true, // 是否转换后直接更换属性值
+            exclude: [],
+            landscape: false, // 是否处理横屏情况
+          }),
+        ],
+      },
     },
     plugins: [
       vue(),
@@ -43,6 +62,9 @@ export default ({ command, mode }) => {
       // 还可配置entry入口文件， inject自定义注入数据等
       // 其他地方使用配置文件（vue,ts,js等） 使用 import.meta.env
       createHtmlPlugin(),
-    ]
+      Components({
+        resolvers: [VantResolver()],
+      }),
+    ],
   });
 };
