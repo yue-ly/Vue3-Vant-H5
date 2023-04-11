@@ -1,4 +1,5 @@
 import vue from '@vitejs/plugin-vue';
+import { resolve } from 'path'; // 引入node path模块
 import { defineConfig, loadEnv } from 'vite';
 import { createHtmlPlugin } from 'vite-plugin-html';
 
@@ -27,6 +28,14 @@ export default ({ command, mode }) => {
     server: {
       host: env.VITE_HOST,
       port: env.VITE_PORT
+    },
+    css: {
+      preprocessorOptions: {
+        less: {
+          javascriptEnabled: true,
+          additionalData: `@import "${resolve(__dirname,'src/styles/index.less')}";`,
+        },
+      },
     },
     plugins: [
       vue(),

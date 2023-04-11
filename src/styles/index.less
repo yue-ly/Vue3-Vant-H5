@@ -1,0 +1,31 @@
+
+/* Define variables */
+@primary-color: #007bff;
+@secondary-color: #6c757d;
+@font-size: 16px;
+@spacing: 10px;
+
+/* Use variables in styles */
+body {
+  font-size: @font-size;
+  color: @secondary-color;
+}
+
+button {
+  background-color: @primary-color;
+  color: white;
+  padding: @spacing;
+} 
+
+/* We can also use mixins to reuse common styles across multiple selectors */
+.rounded-corners {
+  border-radius: 5px;
+}
+
+button {
+  .rounded-corners;
+}
+
+input {
+  .rounded-corners;
+} 
