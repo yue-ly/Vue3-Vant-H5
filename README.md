@@ -29,13 +29,17 @@ npm run lint
 
 ### 2023-4-11
 
-[√] 轻量级的前端组件库, Vant4 (https://vant-contrib.gitee.io/vant/#/zh-CN/)
-[√] 页面路由跳转方式, Vue-Router (https://router.vuejs.org/zh/)
-[√] 状态管理工具, Pinia (https://pinia.vuejs.org/)
-[√] postcss-px-to-viewport 将 px 单位转化为 vm/vh 单位
+[&#10004;] 轻量级的前端组件库, Vant4 (https://vant-contrib.gitee.io/vant/#/zh-CN/)
+
+[&#10004;] 页面路由跳转方式, Vue-Router (https://router.vuejs.org/zh/)
+
+[&#10004;] 状态管理工具, Pinia (https://pinia.vuejs.org/)
+
+[&#10004;] postcss-px-to-viewport 将 px 单位转化为 vm/vh 单位
 
 
 ### 2023-4-12
 
-[√] 增加 axios 接口请求方式 (https://axios-http.com/zh/)
-[√] 添加 iconfont 矢量图标 阿里图标库 (https://www.iconfont.cn/)
+[&#10004;] 增加 axios 接口请求方式 (https://axios-http.com/zh/)
+
+[&#10004;] 添加 iconfont 矢量图标 阿里图标库 (https://www.iconfont.cn/)
