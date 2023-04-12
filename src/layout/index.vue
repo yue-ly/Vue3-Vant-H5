@@ -16,7 +16,7 @@ const updateName = () => {
           <i class="iconfont icon-xinzeng"></i>
         </template>
       </van-cell>
-      <van-button @click="updateName()">点击变成小写</van-button>
+      <van-button type="primary" @click="updateName()">点击变成小写</van-button>
     </van-cell-group>
   </div>
 </template>
