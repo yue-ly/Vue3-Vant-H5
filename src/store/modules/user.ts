@@ -1,10 +1,10 @@
-import { defineStore } from 'pinia'
+import { defineStore } from "pinia";
 
-export const useUserStore = defineStore('user', {
+export const useUserStore = defineStore("user", {
   // id: 'user', // id必填，且需要唯一。两种写法
   state: () => {
     return {
-      name: 'ROTEL',
+      name: "ROTEL",
     };
   },
   getters: {
@@ -15,4 +15,4 @@ export const useUserStore = defineStore('user', {
       this.name = name;
     },
   },
-})
+});

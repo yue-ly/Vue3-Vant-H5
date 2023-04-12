@@ -1,6 +1,5 @@
-
 // 日期转字符串，日期之间用-分割
-export const dateToStringWithDash = (date: Date, format: string = "zh-CN"): string => {
+export const dateToStringWithDash = (date: Date, format = "zh-CN"): string => {
   try {
     const formatter = new Intl.DateTimeFormat(format, {
       year: "numeric",
@@ -10,30 +9,33 @@ export const dateToStringWithDash = (date: Date, format: string = "zh-CN"): stri
       minute: "numeric",
       second: "numeric",
       hour12: false,
-      timeZone: "Asia/Shanghai" // add timeZone option for China time
+      timeZone: "Asia/Shanghai", // add timeZone option for China time
     });
-    return formatter.format(date).replace(/\//g, '-');
+    return formatter.format(date).replace(/\//g, "-");
   } catch (error) {
     console.error(error);
     return "Invalid Date";
   }
-}
+};
 
 // 日期转字符串，只包含日期，日期之间用-分割
-export const dateToDateOnlyStringWithDash = (date: Date, format: string = "zh-CN"): string => {
+export const dateToDateOnlyStringWithDash = (
+  date: Date,
+  format = "zh-CN"
+): string => {
   try {
     const formatter = new Intl.DateTimeFormat(format, {
       year: "numeric",
       month: "2-digit",
       day: "2-digit",
-      timeZone: "Asia/Shanghai" // add timeZone option for China time
+      timeZone: "Asia/Shanghai", // add timeZone option for China time
     });
-    return formatter.format(date).replace(/\//g, '-');
+    return formatter.format(date).replace(/\//g, "-");
   } catch (error) {
     console.error(error);
     return "Invalid Date";
   }
-}
+};
 
 interface TreeNode {
   id: number;
@@ -42,6 +44,7 @@ interface TreeNode {
 }
 
 // 扁平化数组数据转化为树形结构数据方法
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const flatToTree = (flatArray: any[], parentId?: number): TreeNode[] => {
   const tree: TreeNode[] = [];
   flatArray.forEach((item) => {
@@ -58,4 +61,4 @@ const flatToTree = (flatArray: any[], parentId?: number): TreeNode[] => {
     }
   });
   return tree;
-}
+};

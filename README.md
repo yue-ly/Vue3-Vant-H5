@@ -34,3 +34,8 @@ npm run lint
 ### postcss-px-to-viewport
 
 将 px 单位转化为 vm/vh 单位 
+
+### 2023-4-12
+
+[√] 新增 axios 封装请求方式
+[ ] 添加 iconfont 阿里图标库 (https://www.iconfont.cn/)
