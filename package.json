@@ -5,8 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc --noEmit --skipLibCheck && vite build",
-    "build:dev": "vue-tsc --noEmit --skipLibCheck && vite build --mode=development",
+    "build": "vue-tsc --noEmit --skipLibCheck && vite build --mode=development",
     "lint": "eslint --ext .js,.vue,.ts src --fix",
     "preview": "vite preview"
   },
