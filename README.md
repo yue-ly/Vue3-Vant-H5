@@ -1,5 +1,5 @@
 # typescript-vue3-vite
-
+  针对移动端开发，进行一体化处理。
 ## Item Design
 1. vue3  typescript vite
 
@@ -27,15 +27,15 @@ npm run build
 npm run lint
 ```
 
-### vant 组件库
+### 2023-4-11
 
-轻量级的前端组件库
+[√] 轻量级的前端组件库, Vant4 (https://vant-contrib.gitee.io/vant/#/zh-CN/)
+[√] 页面路由跳转方式, Vue-Router (https://router.vuejs.org/zh/)
+[√] 状态管理工具, Pinia (https://pinia.vuejs.org/)
+[√] postcss-px-to-viewport 将 px 单位转化为 vm/vh 单位
 
-### postcss-px-to-viewport
-
-将 px 单位转化为 vm/vh 单位 
 
 ### 2023-4-12
 
-[√] 新增 axios 封装请求方式
-[ ] 添加 iconfont 阿里图标库 (https://www.iconfont.cn/)
+[√] 增加 axios 接口请求方式 (https://axios-http.com/zh/)
+[√] 添加 iconfont 矢量图标 阿里图标库 (https://www.iconfont.cn/)

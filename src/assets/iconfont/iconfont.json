@@ -1,0 +1,23 @@
+{
+  "id": "4010872",
+  "name": "Rotel项目",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "3248452",
+      "name": "新增",
+      "font_class": "xinzeng",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
+      "icon_id": "5387522",
+      "name": "关闭",
+      "font_class": "guanbi",
+      "unicode": "eaf2",
+      "unicode_decimal": 60146
+    }
+  ]
+}
